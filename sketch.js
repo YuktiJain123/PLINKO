@@ -10,6 +10,7 @@ var divisions= [];
 
 var divisionHeight=300;
 
+
 function setup() {
   createCanvas(480,600);
 
@@ -24,21 +25,16 @@ function setup() {
     for(var j=40;j <=width;j=j+50){
       plinkos.push(new Plinko(j,75));
     }
+    for(var j=30;j <=width;j=j+50){
+      plinkos.push(new Plinko(j,125));
+    }
     for(var j=40;j <=width;j=j+50){
       plinkos.push(new Plinko(j,175));
     }
-    for(var j=40;j <=width;j=j+50){
-      plinkos.push(new Plinko(j,275));
+    for(var j=30;j <=width;j=j+50){
+      plinkos.push(new Plinko(j,225));
     }
-    for(var j=40;j <=width;j=j+50){
-      plinkos.push(new Plinko(j,375));
-    }
-    for(var j=40;j <=width;j=j+50){
-      plinkos.push(new Plinko(j,475));
-    }
-    if(frameCount%60===0){
-      particles.push(new Particle(random(width/2-10,width/2+10),10,10));
-    }
+    
 }
 
 function draw() {
@@ -49,10 +45,13 @@ function draw() {
   for(var k=0;k<divisions.length;k++){
     divisions[k].display();
   }
-  for(var j=40;j<divisions.length;j++){
-   plinkos[j].display();
+  for(var i=0;i<plinkos.length;i++){
+   plinkos[i].display();
   }
   for(var j=0;j<particles.length;j++){
     particles[j].display();
    }
+   if(frameCount%60===0){
+    particles.push(new Particle(random(width/2-200,width/2+200),10,10));
+  }
 }

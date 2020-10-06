@@ -12,7 +12,7 @@ class Particle{
         var pos=this.body.position;
         var angle=this.body/angle;
         push();
-        transalate(pos.x,pos.y);
+        translate(pos.x,pos.y);
         rotate(angle);
         //imageMode (CENTER)
         noStroke();
